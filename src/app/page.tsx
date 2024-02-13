@@ -9,7 +9,7 @@ export default function Home() {
       </div>
       <div className="flex gap-4">
         <Link
-          href={"mailto:work.frastioagustian@gmail.com"}
+          href={"mailto:hi@frast.dev"}
           className="text-blue-200"
           target="_blank"
         >
