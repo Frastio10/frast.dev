@@ -47,7 +47,7 @@ export default function Home() {
   }, []);
   return (
     <div id="screen">
-      <h1 className="text-3xl font-bold">Frastio Agustian</h1>
+      <h1 className="text-3xl font-bold text-black">Frastio Agustian</h1>
       <p className="text-xl">- Web Developer -</p>
       <div className="flex gap-4 text-white text-sm">
         <a href="https://github.com/frastio10" target="_blank">
