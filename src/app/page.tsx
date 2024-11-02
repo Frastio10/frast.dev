@@ -1,35 +1,63 @@
-import Link from "next/link";
+// import Link from "next/link";
+"use client";
+import { useLayoutEffect } from "react";
+import ScreenEffect from "../../libs/screen-effect";
 
 export default function Home() {
+  useLayoutEffect(() => {
+    const config = {
+      effects: {
+        roll: {
+          enabled: false,
+          options: {
+            speed: 1000,
+          },
+        },
+        vignette: { enabled: true },
+        scanlines: { enabled: true },
+        vcr: {
+          enabled: true,
+          options: {
+            opacity: 1,
+            miny: 220,
+            miny2: 220,
+            num: 70,
+            fps: 60,
+          },
+        },
+        wobbley: { enabled: true },
+        snow: {
+          enabled: true,
+          options: {
+            opacity: 0.2,
+          },
+        },
+      },
+    };
+
+    const screen = new ScreenEffect("#screen", {});
+
+    setTimeout(() => {
+      for (const prop in config.effects) {
+        if (!!config.effects[prop].enabled) {
+          screen.add(prop, config.effects[prop].options);
+        }
+      }
+    }, 1000);
+  }, []);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24 gap-8">
-      <div className="text-center">
-        <p>Frastio Agustian</p>{" "}
-        <p className="text-lg"> - Software Engineer -</p>
-      </div>
-      <div className="flex gap-4">
-        <Link
-          href={"mailto:hi@frast.dev"}
-          className="text-blue-200"
-          target="_blank"
-        >
-          Email
-        </Link>
-        <Link
-          href={"https://github.com/frastio10"}
-          className="text-blue-200"
-          target="_blank"
-        >
+    <div id="screen">
+      <h1 className="text-3xl font-bold">Frastio Agustian</h1>
+      <p className="text-xl">- Web Developer -</p>
+      <div className="flex gap-4 text-white text-sm">
+        <a href="https://github.com/frastio10" target="_blank">
           GitHub
-        </Link>
-        <Link
-          href={"https://www.linkedin.com/in/frastio-agustian/"}
-          className="text-blue-200"
-          target="_blank"
-        >
+        </a>
+        <a href="mailto:hi@frast.dev">Email</a>
+        <a href="https://id.linkedin.com/in/frastio-agustian" target="_blank">
           LinkedIn
-        </Link>
+        </a>
       </div>
-    </main>
+    </div>
   );
 }
