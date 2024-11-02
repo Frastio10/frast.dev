@@ -39,8 +39,8 @@ export default function Home() {
 
     setTimeout(() => {
       for (const prop in config.effects) {
-        if (!!config.effects[prop].enabled) {
-          screen.add(prop, config.effects[prop].options);
+        if (!!(config.effects as any)[prop].enabled) {
+          screen.add(prop, (config.effects as any)[prop].options);
         }
       }
     }, 1000);

@@ -237,7 +237,7 @@ export default class ScreenEffect {
     const config = this.effects.vcr.config;
 
     if (config.fps >= 60) {
-      cancelAnimationFrame(this.vcrInterval);
+      cancelAnimationFrame(this.vcrInterval!);
       const animate = () => {
         this.renderTrackingNoise();
         this.vcrInterval = requestAnimationFrame(animate);
