@@ -108,7 +108,7 @@ canvas.snow {
   top: 0;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  z-index: 10000;
+  z-index: 999;
 }
 
 .scanlines {
