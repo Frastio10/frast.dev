@@ -57,6 +57,12 @@ export default function Home() {
         <a href="https://id.linkedin.com/in/frastio-agustian" target="_blank">
           LinkedIn
         </a>
+        <a
+          href="https://drive.google.com/file/d/1yXCkp3RUB4itxbXhBPYo21CxmkM_foBD/view?usp=sharing"
+          target="_blank"
+        >
+          Resume
+        </a>
       </div>
     </div>
   );
